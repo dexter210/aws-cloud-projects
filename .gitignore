@@ -1,0 +1,58 @@
+# ==========================================
+# AWS Cloud Projects - Git Ignore Rules
+# ==========================================
+
+# AWS credentials and secrets
+.aws/
+credentials
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Application secrets
+wp-config.php
+secrets.*
+*.secret
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# IDE / Editors
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
