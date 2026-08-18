@@ -2,18 +2,22 @@
 
 This repository will showcase my AWS cloud projects that I do to stregthen my skills and to soon land a cloud engineering role
 
-Each project documents:
+What This Repository Covers
 
-* The problem being solved
-* Architecture and AWS services used
-* Step-by-step implementation
-* Screenshots and validation evidence
-* Security decisions
-* Troubleshooting
-* Monitoring and observability
-* Cost considerations
-* Lessons learned
-* Production improvements
+AWS cloud architecture
+Infrastructure deployment
+Linux administration
+Networking and security
+IAM and access control
+Monitoring and observability
+Infrastructure as Code
+CI/CD and automation
+Containers and orchestration
+Database and application migrations
+High availability and scalability
+Backup and disaster recovery
+Cloud cost optimization
+Troubleshooting and operational validation
 
 
 ## Projects
