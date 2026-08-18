@@ -83,8 +83,7 @@ Restricting SSH to my IP reduced unnecessary administrative exposure.
 
 ### Evidence
 
-![EC2 Instance](images/01-ec2-instance-running.png)
-
+![EC2 Instance](EC2 instance.png)
 ![Security Group](images/02-security-group-rules.png)
 
 ---
