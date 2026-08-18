@@ -20,4 +20,4 @@ The goal was not only to deploy a working application, but to understand the ful
 
 ## Architecture
 
-![AWS Legacy Migration Architecture](images/aws-legacy-migration-architecture.png)
+![AWS Legacy Migration Architecture](images/aws-legacy-migration-architecturee.png)
