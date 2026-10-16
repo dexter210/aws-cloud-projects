@@ -9,7 +9,7 @@ Hands-on cloud infrastructure labs focused on deploying, securing, validating, m
 | Project | What I worked on | Status |
 | --- | --- | --- |
 | [01 — Legacy Application Migration to AWS](project-01-legacy-migration/README.md) | Hosted a WordPress/LAMP application on Ubuntu EC2, configured network access, validated the application and database, reviewed system logs, implemented CloudWatch CPU alerting, and documented cleanup. | Documented |
-| 02 — Deploying Applications on Amazon EKS | Planned an EKS cluster and validated an `eksctl` configuration; encountered a managed-node-group provisioning failure and investigated CloudFormation rollback and Kubernetes node registration. | In progress — deployment not completed |
+| [02 — Deploying Applications on Amazon EKS](project-02-eks-deployment/README.md) | Planned an EKS cluster and validated an `eksctl` configuration; encountered a managed-node-group provisioning failure and investigated CloudFormation rollback and Kubernetes node registration. | In progress — deployment not completed |
 
 > **Accuracy note:** Project 02 is a work in progress. The existing evidence does **not** demonstrate a successful WordPress deployment, Helm rollout, or Horizontal Pod Autoscaler test on EKS.
 
