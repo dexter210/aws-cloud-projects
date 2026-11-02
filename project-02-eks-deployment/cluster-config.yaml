@@ -10,17 +10,23 @@ availabilityZones:
   - us-east-1a
   - us-east-1b
 
+iam:
+  withOIDC: true
+
 vpc:
   nat:
     gateway: Disable
 
 managedNodeGroups:
   - name: standard-workers
-    instanceType: t3.medium
+    # Lab instance type used in the successful deployment.
+    # Free Tier eligibility is account-specific; verify before launching.
+    instanceType: c7i-flex.large
     desiredCapacity: 2
     minSize: 2
-    maxSize: 3
+    maxSize: 2
     privateNetworking: false
     volumeSize: 20
+    volumeType: gp3
     ssh:
       allow: false

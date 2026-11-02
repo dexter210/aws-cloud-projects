@@ -64,6 +64,10 @@ The completed environment reached the following state:
 | Scale-out test | 1 → 5 WordPress replicas |
 | Scale-down test | 5 → 1 WordPress replica |
 
+![Final EKS validation](screenshots/28-final-validation.jpg)
+
+This final validation captures the steady-state application, HPA target, bound gp3 PVC, external LoadBalancer service, deployed Helm release, and both EKS worker nodes in `Ready` state.
+
 ## Metrics Server Validation
 
 I verified that Metrics Server was collecting live CPU and memory usage from both EKS worker nodes.

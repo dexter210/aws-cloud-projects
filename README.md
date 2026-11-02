@@ -6,7 +6,7 @@ Hands-on infrastructure, automation, observability, IAM, and security projects b
 
 | Project | Focus | Highlights |
 | --- | --- | --- |
-| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, Linux, networking, IAM, CloudWatch, application migration, EKS learning |
+| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, Linux, networking, IAM, CloudWatch, application migration, EKS, Helm, Kubernetes autoscaling |
 | [Microsoft Sentinel SOC Lab](https://github.com/dexter210/MS-soc-lab) | Cloud Security / Detection Engineering | Azure VM, AMA/DCR, KQL, Microsoft Sentinel, MITRE ATT&CK, incident investigation |
 | [Active Directory Automation](https://github.com/dexter210/Active-Directory-) | Systems / IAM | PowerShell, AD DS, bulk user provisioning, OU management, safer credential handling |
 | [Phishing Awareness Simulation](https://github.com/dexter210/Phishing-Campaign) | Security Awareness | GoPhish, controlled simulation workflow, defensive security considerations |
@@ -26,13 +26,22 @@ Rehosted a traditional WordPress/LAMP workload on Ubuntu EC2 and documented the 
 - logs, service health, and resource validation
 - credential rotation and cleanup practices
 
-### [02 — Deploying Applications on Amazon EKS](project-02-eks-deployment/README.md)
+### [02 — Deploying Microservices on Amazon EKS](project-02-eks-deployment/README.md)
 
-Amazon EKS learning project focused on managed Kubernetes, worker-node provisioning, Helm, and autoscaling.
+Built and validated a managed Kubernetes application platform on Amazon EKS using Helm, persistent EBS storage, Metrics Server, and Horizontal Pod Autoscaling.
 
-**Current status:** in progress.
+**Status:** completed.
 
-The first provisioning attempt successfully created the EKS control plane, but the managed node group failed to complete. The project documents the troubleshooting path through `kubectl`, EKS node-group status, CloudFormation rollback, EC2/Auto Scaling checks, and cleanup rather than claiming a successful deployment that did not occur.
+**Demonstrated:**
+- Amazon EKS 1.36 with a two-node managed node group
+- Helm-based WordPress + MariaDB deployment
+- MariaDB StatefulSet with encrypted gp3 EBS persistent storage
+- public application access through an AWS Load Balancer
+- Kubernetes Metrics Server
+- CPU-based HPA with a 50% target
+- successful scale-out from **1 → 5 WordPress replicas**
+- successful scale-down from **5 → 1 replica**
+- troubleshooting of CloudFormation node-group rollback, Free Tier instance eligibility, Git Bash path rewriting, readiness timeouts, Helm YAML errors, and an `OOMKilled` container
 
 ## Core technical areas
 
@@ -68,6 +77,7 @@ The first provisioning attempt successfully created the EKS control plane, but t
 - Windows Security Events
 - Azure Monitor Agent / DCR
 - MITRE ATT&CK
+- Kubernetes Metrics Server
 - monitoring, alerting, and troubleshooting
 - incident triage and investigation
 
@@ -83,9 +93,9 @@ The first provisioning attempt successfully created the EKS control plane, but t
 ## Repository roadmap
 
 - [x] Legacy application migration to AWS
-- [ ] Complete Amazon EKS worker-node deployment
-- [ ] Deploy application through Helm
-- [ ] Validate Kubernetes Metrics Server and HPA
+- [x] Complete Amazon EKS worker-node deployment
+- [x] Deploy application through Helm
+- [x] Validate Kubernetes Metrics Server and HPA
 - [ ] Add Infrastructure as Code project
 - [ ] Add CI/CD and container security project
 - [ ] Add disaster-recovery architecture and recovery validation
