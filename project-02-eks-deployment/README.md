@@ -72,7 +72,7 @@ This final validation captures the steady-state application, HPA target, bound g
 
 I verified that Metrics Server was collecting live CPU and memory usage from both EKS worker nodes.
 
-![Metrics Server working](screenshots/19-eks-metrics-server-working.jpg)
+![Metrics Server working](screenshots/19-eks-metrics-server-working.png)
 
 This was an important prerequisite for HPA because Kubernetes needs resource metrics before it can make CPU-based scaling decisions.
 
@@ -80,13 +80,23 @@ This was an important prerequisite for HPA because Kubernetes needs resource met
 
 Before deploying upgrades, I linted the chart to catch YAML and Helm-template issues.
 
-![Helm lint validation](screenshots/21-helm-chart-validation.jpg)
+![Helm lint validation](screenshots/21-helm-chart-validation.png)
 
 Result:
 
 ```text
 1 chart(s) linted, 0 chart(s) failed
 ```
+
+## Application Deployment
+
+WordPress and MariaDB both reached a healthy `Running` state, and the WordPress service was exposed externally through an AWS Load Balancer.
+
+![WordPress and MariaDB pods running](screenshots/22-wordpress-mariadb-pods-running.png)
+
+The external endpoint successfully loaded the WordPress installer in a browser:
+
+![WordPress running on Amazon EKS](screenshots/24-wordpress-running-on-eks.png)
 
 ## Persistent Storage
 
@@ -100,6 +110,8 @@ MariaDB uses a StatefulSet and an 8 GiB PersistentVolumeClaim backed by an encry
 
 This allows the database pod to be recreated without losing its database volume.
 
+![MariaDB PVC bound to gp3 EBS storage](screenshots/23-mariadb-ebs-pvc-bound.png)
+
 ## Horizontal Pod Autoscaling
 
 The WordPress Deployment uses CPU requests so the HPA can calculate utilization correctly.
@@ -111,9 +123,15 @@ Final HPA configuration:
 - CPU target: **50%**
 - Scale-down stabilization: **60 seconds**
 
-During the successful load test, CPU exceeded the target and Kubernetes scaled WordPress from **1 pod to 5 pods**. After the load generator was removed, CPU returned to normal and Kubernetes automatically scaled the Deployment back to **1 replica**.
+![WordPress HPA configured](screenshots/25-wordpress-hpa-created.png)
 
-![HPA scale-down proof](screenshots/27-hpa-wordpress-scale-down.jpg)
+During the successful load test, CPU exceeded the target and Kubernetes scaled WordPress from **1 pod to 5 pods**. The new replicas reached `1/1 Running` with zero new restarts.
+
+![Healthy HPA scale-out to five WordPress replicas](screenshots/26-hpa-wordpress-scale-out-healthy.png)
+
+After the load generator was removed, CPU returned to normal and Kubernetes automatically scaled the Deployment back to **1 replica**.
+
+![HPA scale-down proof](screenshots/27-hpa-wordpress-scale-down.png)
 
 The screenshot captures the full scale-down sequence after CPU fell from more than 250% of the configured request to low single digits.
 
@@ -122,6 +140,10 @@ The screenshot captures the full scale-down sequence after CPU fell from more th
 This project included several failures that required real troubleshooting rather than a clean scripted deployment.
 
 ### 1. Managed Node Group Failed During the First Attempt
+
+The EKS control plane itself reached `ACTIVE` during the retry:
+
+![EKS control plane active](screenshots/15-eks-attempt2-control-plane-active.png)
 
 The original node group used an EC2 instance type that was not eligible under the account's Free Tier restrictions. The EKS control plane became `ACTIVE`, but the managed node-group CloudFormation stack rolled back and `kubectl get nodes` returned no worker nodes.
 
@@ -135,6 +157,10 @@ kubectl get nodes -o wide
 ```
 
 to separate control-plane health from worker-node health.
+
+The CloudFormation/EKS failure details exposed the actual EC2 launch restriction:
+
+![Node-group failure root cause](screenshots/17-nodegroup-failure-root-cause-free-tier.png)
 
 ### 2. Git Bash Rewrote /bin/sh
 
@@ -224,9 +250,17 @@ project-02-eks-deployment/
 │       ├── wordpress-deployment.yaml
 │       └── wordpress-service.yaml
 └── screenshots/
-    ├── 19-eks-metrics-server-working.jpg
-    ├── 21-helm-chart-validation.jpg
-    └── 27-hpa-wordpress-scale-down.jpg
+    ├── 15-eks-attempt2-control-plane-active.png
+    ├── 17-nodegroup-failure-root-cause-free-tier.png
+    ├── 19-eks-metrics-server-working.png
+    ├── 21-helm-chart-validation.png
+    ├── 22-wordpress-mariadb-pods-running.png
+    ├── 23-mariadb-ebs-pvc-bound.png
+    ├── 24-wordpress-running-on-eks.png
+    ├── 25-wordpress-hpa-created.png
+    ├── 26-hpa-wordpress-scale-out-healthy.png
+    ├── 27-hpa-wordpress-scale-down.png
+    └── 28-final-validation.jpg
 ```
 
 ## Useful Validation Commands
