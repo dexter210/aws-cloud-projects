@@ -1,0 +1,6 @@
+apiVersion: v2
+name: wordpress-eks
+description: WordPress and MariaDB deployment on Amazon EKS
+type: application
+version: 0.1.0
+appVersion: "7.1.4"

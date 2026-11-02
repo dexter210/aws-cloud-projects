@@ -1,0 +1,34 @@
+wordpress:
+  replicaCount: 1
+  image:
+    repository: wordpress
+    tag: "7.1.4-php8.3-apache"
+    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 80
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+
+mariadb:
+  image:
+    repository: mariadb
+    tag: "12.3.3"
+    pullPolicy: IfNotPresent
+  database: wordpress
+  user: wordpress
+  persistence:
+    storageClass: gp3
+    size: 8Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: 750m
+      memory: 1Gi
