@@ -290,4 +290,4 @@ kubectl delete namespace wordpress
 eksctl delete cluster --name enterprise-cluster --region us-east-1 --wait
 ```
 
-Cleanup is treated as part of the project, not an optional afterthought.
+
