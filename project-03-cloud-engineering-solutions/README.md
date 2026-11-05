@@ -56,9 +56,15 @@ problem-01-data-variability/
 ├── schema/
 │   └── common-customer-schema.json
 ├── scripts/
-│   └── standardize_customers.py
-└── output/
-    └── standardized-customers.json
+│   ├── standardize_customers.py
+│   └── validate_standardized.py
+├── output/
+│   ├── standardized-customers.json
+│   └── data-quality-report.json
+└── screenshots/
+    ├── 01-data-standardization-success.png
+    ├── 02-standardized-output.png
+    └── 03-data-quality-validation-pass.png
 ```
 
 ### What This Demonstrates
@@ -89,3 +95,49 @@ Athena / Redshift / BI
 ```
 
 The local Python exercise is intentionally small so the transformation logic can be understood before introducing managed AWS services.
+
+
+## Problem 1 Evidence
+
+### 1. Data Standardization Execution
+
+I ran the local transformation script against three intentionally inconsistent source datasets. The script normalized field names, converted timestamps to ISO-8601 UTC, handled missing email values consistently, and produced a single standardized customer dataset.
+
+![Data standardization completed successfully](problem-01-data-variability/screenshots/01-data-standardization-success.png)
+
+### 2. Standardized Output
+
+The transformed output demonstrates that records from different source systems now follow the same common structure: `customer_id`, `full_name`, `email`, `source_system`, `created_at`, and `schema_version`.
+
+![Standardized customer output](problem-01-data-variability/screenshots/02-standardized-output.png)
+
+### 3. Data Quality Validation
+
+After transformation, I ran a second validation script to verify required fields, valid source values, ISO-8601 UTC timestamps, schema versioning, duplicate IDs, and basic email formatting.
+
+The validation result was:
+
+```text
+Records checked: 8
+Valid records:   8
+Invalid records: 0
+Status:          PASS
+```
+
+![Data quality validation passed](problem-01-data-variability/screenshots/03-data-quality-validation-pass.png)
+
+This demonstrates a simple but realistic pipeline pattern:
+
+```text
+Different Source Formats
+        ↓
+Transformation
+        ↓
+Common Schema
+        ↓
+Data Quality Validation
+        ↓
+Trusted Curated Data
+```
+
+The same pattern could later be implemented with Amazon S3, AWS Glue ETL, Glue Data Quality, and a curated Parquet layer.
