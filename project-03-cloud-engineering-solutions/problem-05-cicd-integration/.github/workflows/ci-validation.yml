@@ -1,0 +1,26 @@
+name: CI Validation
+
+on:
+  push:
+    paths:
+      - "project-03-cloud-engineering-solutions/problem-05-cicd-integration/**"
+  pull_request:
+    paths:
+      - "project-03-cloud-engineering-solutions/problem-05-cicd-integration/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run CI validation
+        working-directory: project-03-cloud-engineering-solutions/problem-05-cicd-integration
+        run: python scripts/validate_pipeline.py
