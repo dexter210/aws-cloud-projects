@@ -151,3 +151,33 @@ Actionable alert
 ```
 
 The tuned evaluator also emits alerts only when a metric enters a new sustained severity state, preventing repeated notifications for the same condition.
+
+
+### Alert Tuning Result
+
+After adding a requirement for two consecutive samples at the same severity, the alert volume dropped significantly while the important sustained conditions were still detected.
+
+| Measurement | Initial | Tuned |
+|---|---:|---:|
+| Warning alerts | 10 | 3 |
+| Critical alerts | 10 | 5 |
+| Total alerts | 20 | 8 |
+
+This reduced the total alert volume by **60%**.
+
+![Alert tuning reduced monitoring noise](screenshot/02-alert-tuning-reduced-noise.png)
+
+The tuned output still identified the most important sustained conditions, including high CPU, high memory usage, increased HTTP 5xx errors, elevated p95 latency, and reduced availability.
+
+## Problem 2 Outcome
+
+This exercise demonstrates that proactive monitoring is not just about adding more alerts. The monitoring process should:
+
+- collect useful health metrics
+- detect degradation before users report it
+- distinguish warning from critical conditions
+- avoid alerting on every temporary spike
+- review alert quality regularly
+- tune thresholds and persistence rules based on operational feedback
+
+A production implementation could map this pattern to Amazon CloudWatch, Dynatrace, Grafana, Prometheus, or another observability platform.
