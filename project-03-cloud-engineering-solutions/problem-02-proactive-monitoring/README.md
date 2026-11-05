@@ -103,3 +103,51 @@ problem-02-proactive-monitoring/
 └── scripts/
     └── evaluate_metrics.py
 ```
+
+
+## Evidence
+
+### Initial Alert Detection
+
+I ran the monitoring evaluator against seven metric samples representing a system that gradually became unhealthy.
+
+The first pass generated:
+
+```text
+Metric rows checked: 7
+Warning alerts:      10
+Critical alerts:     10
+Total alerts:        20
+```
+
+The evaluator correctly identified severe conditions including high CPU, high memory usage, elevated HTTP 5xx errors, increased p95 latency, and reduced availability.
+
+![Proactive monitoring alert detection](screenshot/01-proactive-monitoring-alert-detection.png)
+
+This demonstrates proactive detection, but it also exposes a second operational problem: **alert noise**. If every bad sample produces another alert, engineers can receive many repeated notifications for the same incident.
+
+## Alert Tuning Exercise
+
+The next step is to reduce alert fatigue by requiring the same severity to be present in two consecutive metric samples before an alert is generated.
+
+This changes the behavior from:
+
+```text
+One bad sample
+    ↓
+Immediate alert
+```
+
+to:
+
+```text
+First bad sample
+    ↓
+Observe
+    ↓
+Second consecutive bad sample
+    ↓
+Actionable alert
+```
+
+The tuned evaluator also emits alerts only when a metric enters a new sustained severity state, preventing repeated notifications for the same condition.
