@@ -102,9 +102,13 @@ problem-05-cicd-integration/
 │   └── deployment-config.json
 ├── scripts/
 │   └── validate_pipeline.py
-└── .github/
-    └── workflows/
-        └── ci-validation.yml
+└── screenshots/
+    └── 02-github-actions-ci-pass.png
+
+Repository root:
+.github/
+└── workflows/
+    └── project-03-ci-validation.yml
 ```
 
 ## Desired Outcomes
@@ -114,3 +118,45 @@ problem-05-cicd-integration/
 - make releases repeatable
 - provide fast feedback
 - create a foundation for future automated delivery
+
+
+## Evidence
+
+### GitHub Actions CI Validation
+
+I triggered the CI workflow from GitHub Actions using the `main` branch.
+
+The hosted runner completed the `validate` job successfully, proving that the validation process works outside my local machine and can be executed consistently by the repository.
+
+![GitHub Actions CI validation passed](screenshots/02-github-actions-ci-pass.png)
+
+The workflow checks out the repository, configures Python, and runs the same validation script used locally.
+
+## Problem 5 Outcome
+
+This exercise demonstrates a practical first step toward CI/CD adoption:
+
+```text
+Code Change
+   ↓
+Push / Pull Request
+   ↓
+GitHub Actions
+   ↓
+Automated Validation
+   ↓
+PASS or FAIL Feedback
+```
+
+The main benefit is repeatability. Instead of relying on an engineer to remember every validation step, the repository performs the checks automatically.
+
+A production version could later add:
+
+- unit and integration tests
+- security scanning
+- container image builds
+- artifact publishing
+- staging deployment
+- approval gates
+- production deployment
+- automated rollback
