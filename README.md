@@ -6,7 +6,7 @@ Hands-on infrastructure, automation, observability, IAM, and security projects b
 
 | Project | Focus | Highlights |
 | --- | --- | --- |
-| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, Linux, networking, IAM, CloudWatch, application migration, EKS, Helm, Kubernetes autoscaling |
+| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, Linux, IAM, CloudWatch, EKS, Helm, Kubernetes autoscaling, Python automation, observability, GitHub Actions |
 | [Microsoft Sentinel SOC Lab](https://github.com/dexter210/MS-soc-lab) | Cloud Security / Detection Engineering | Azure VM, AMA/DCR, KQL, Microsoft Sentinel, MITRE ATT&CK, incident investigation |
 | [Active Directory Automation](https://github.com/dexter210/Active-Directory-) | Systems / IAM | PowerShell, AD DS, bulk user provisioning, OU management, safer credential handling |
 | [Phishing Awareness Simulation](https://github.com/dexter210/Phishing-Campaign) | Security Awareness | GoPhish, controlled simulation workflow, defensive security considerations |
@@ -43,6 +43,23 @@ Built and validated a managed Kubernetes application platform on Amazon EKS usin
 - successful scale-down from **5 → 1 replica**
 - troubleshooting of CloudFormation node-group rollback, Free Tier instance eligibility, Git Bash path rewriting, readiness timeouts, Helm YAML errors, and an `OOMKilled` container
 
+### [03 — Strategic Solutions for Cloud Engineering Challenges](project-03-cloud-engineering-solutions/README.md)
+
+Built a practical cloud-operations strategy project covering five common engineering challenges: inconsistent data, reactive monitoring, team resource constraints, weak documentation, and limited CI/CD adoption.
+
+**Status:** completed.
+
+**Demonstrated:**
+- Python-based data transformation and schema standardization
+- data-quality validation with **8/8 records passing**
+- proactive monitoring across CPU, memory, disk, HTTP 5xx, latency, and availability
+- alert tuning that reduced simulated alert volume from **20 → 8 (60% reduction)**
+- workload prioritization using impact × urgency scoring
+- workload visibility and cross-training coverage planning
+- reusable operational runbook and onboarding templates
+- local CI validation plus successful GitHub Actions execution
+- practical mappings to AWS Glue, S3, CloudWatch, and production observability workflows
+
 ## Core technical areas
 
 ### Cloud
@@ -59,6 +76,8 @@ Built and validated a managed Kubernetes application platform on Amazon EKS usin
 - `kubectl`
 - `eksctl`
 - Helm
+- Python automation
+- GitHub Actions
 - PowerShell
 - Terraform fundamentals
 - Git / GitHub
@@ -78,8 +97,18 @@ Built and validated a managed Kubernetes application platform on Amazon EKS usin
 - Azure Monitor Agent / DCR
 - MITRE ATT&CK
 - Kubernetes Metrics Server
+- proactive monitoring and threshold design
+- alert tuning and alert-fatigue reduction
 - monitoring, alerting, and troubleshooting
 - incident triage and investigation
+
+### Data, reliability & operations
+- schema standardization and data contracts
+- data-quality validation
+- operational runbooks and onboarding design
+- workload prioritization
+- cross-training and backup ownership
+- CI/CD adoption strategy
 
 ## Engineering principles demonstrated across the portfolio
 
@@ -97,7 +126,8 @@ Built and validated a managed Kubernetes application platform on Amazon EKS usin
 - [x] Deploy application through Helm
 - [x] Validate Kubernetes Metrics Server and HPA
 - [ ] Add Infrastructure as Code project
-- [ ] Add CI/CD and container security project
+- [x] Complete cloud engineering strategy / CI validation project
+- [ ] Add dedicated container security pipeline project
 - [ ] Add disaster-recovery architecture and recovery validation
 
 ## Security note
