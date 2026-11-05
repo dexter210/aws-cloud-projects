@@ -1,0 +1,66 @@
+[
+  {
+    "customer_id": "1001",
+    "full_name": "Jordan Smith",
+    "email": "jordan@example.com",
+    "source_system": "crm",
+    "created_at": "2026-10-30T14:35:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "1002",
+    "full_name": "Avery Johnson",
+    "email": "avery@example.com",
+    "source_system": "crm",
+    "created_at": "2026-10-31T09:10:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "1003",
+    "full_name": "Morgan Lee",
+    "email": null,
+    "source_system": "crm",
+    "created_at": "2026-11-01T17:45:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "M-2001",
+    "full_name": "Taylor Brown",
+    "email": "taylor@example.com",
+    "source_system": "marketing",
+    "created_at": "2026-11-01T08:30:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "M-2002",
+    "full_name": "Cameron Davis",
+    "email": "cameron@example.com",
+    "source_system": "marketing",
+    "created_at": "2026-11-02T16:15:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "M-2003",
+    "full_name": "Riley Wilson",
+    "email": null,
+    "source_system": "marketing",
+    "created_at": "2026-11-03T11:05:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "3001",
+    "full_name": "Casey Martinez",
+    "email": "casey@example.com",
+    "source_system": "support",
+    "created_at": "2026-11-02T00:00:00Z",
+    "schema_version": "1.0"
+  },
+  {
+    "customer_id": "3002",
+    "full_name": "Jamie Clark",
+    "email": null,
+    "source_system": "support",
+    "created_at": "2026-11-03T00:00:00Z",
+    "schema_version": "1.0"
+  }
+]

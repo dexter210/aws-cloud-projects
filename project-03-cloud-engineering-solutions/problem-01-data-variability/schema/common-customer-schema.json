@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Standard Customer Record",
+  "type": "object",
+  "required": [
+    "customer_id",
+    "full_name",
+    "source_system",
+    "created_at",
+    "schema_version"
+  ],
+  "properties": {
+    "customer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "full_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "type": ["string", "null"]
+    },
+    "source_system": {
+      "type": "string",
+      "enum": ["crm", "marketing", "support"]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    }
+  },
+  "additionalProperties": false
+}

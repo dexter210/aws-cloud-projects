@@ -1,0 +1,4 @@
+customer_id,name,email,created_at
+1001,Jordan Smith,jordan@example.com,2026-10-30T14:35:00Z
+1002,Avery Johnson,avery@example.com,2026-10-31T09:10:00Z
+1003,Morgan Lee,,2026-11-01T17:45:00Z

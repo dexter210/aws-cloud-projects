@@ -1,0 +1,14 @@
+[
+  {
+    "id": 3001,
+    "customerName": "Casey Martinez",
+    "contactEmail": "casey@example.com",
+    "created": "2026-11-02"
+  },
+  {
+    "id": 3002,
+    "customerName": "Jamie Clark",
+    "contactEmail": null,
+    "created": "2026-11-03"
+  }
+]
