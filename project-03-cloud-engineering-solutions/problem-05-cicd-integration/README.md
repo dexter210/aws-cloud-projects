@@ -103,6 +103,7 @@ problem-05-cicd-integration/
 ├── scripts/
 │   └── validate_pipeline.py
 └── screenshots/
+    ├── 01-local-ci-validation-pass.png
     └── 02-github-actions-ci-pass.png
 
 Repository root:
@@ -121,6 +122,19 @@ Repository root:
 
 
 ## Evidence
+
+### Local CI Validation
+
+Before relying on the hosted workflow, I ran the validation script locally to confirm the same checks passed on my workstation.
+
+The local validation confirmed:
+
+- Python syntax validation passed
+- deployment configuration validation passed
+- application health check passed
+- the overall CI validation passed
+
+![Local CI validation passed](screenshots/01-local-ci-validation-pass.png)
 
 ### GitHub Actions CI Validation
 
