@@ -77,18 +77,6 @@ Examples:
 - rotating ownership of runbook walkthroughs
 - pairing during unfamiliar operational tasks
 
-## Files
-
-```text
-problem-04-documentation-guidance/
-├── README.md
-├── templates/
-│   └── operational-runbook-template.md
-├── onboarding/
-│   └── cloud-engineer-onboarding-checklist.md
-└── examples/
-    └── high-cpu-runbook.md
-```
 
 ## Desired Outcomes
 
