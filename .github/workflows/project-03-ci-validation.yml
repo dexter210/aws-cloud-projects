@@ -1,4 +1,4 @@
-name: CI Validation
+name: Project 3 CI Validation
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - "project-03-cloud-engineering-solutions/problem-05-cicd-integration/**"
+  workflow_dispatch:
 
 jobs:
   validate:
