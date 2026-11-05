@@ -298,22 +298,6 @@ Starting with automated validation creates trust in the pipeline before introduc
 
 ---
 
-## Repository Structure
-
-```text
-project-03-cloud-engineering-solutions/
-├── README.md
-├── problem-01-data-variability/
-├── problem-02-proactive-monitoring/
-├── problem-03-resource-constraints/
-├── problem-04-documentation-guidance/
-└── problem-05-cicd-integration/
-```
-
-Each problem folder contains its own detailed README, scripts, configuration files, examples, and supporting evidence where applicable.
-
----
-
 ## Conclusion
 
 This project demonstrates how I would approach cloud engineering challenges from both a technical and operational perspective.
