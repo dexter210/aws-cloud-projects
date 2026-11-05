@@ -1,0 +1,32 @@
+{
+  "cpu_percent": {
+    "warning": 70,
+    "critical": 90,
+    "direction": "above"
+  },
+  "memory_percent": {
+    "warning": 75,
+    "critical": 90,
+    "direction": "above"
+  },
+  "disk_percent": {
+    "warning": 75,
+    "critical": 90,
+    "direction": "above"
+  },
+  "http_5xx_percent": {
+    "warning": 2,
+    "critical": 5,
+    "direction": "above"
+  },
+  "p95_latency_ms": {
+    "warning": 750,
+    "critical": 1500,
+    "direction": "above"
+  },
+  "availability_percent": {
+    "warning": 99.9,
+    "critical": 99.0,
+    "direction": "below"
+  }
+}
