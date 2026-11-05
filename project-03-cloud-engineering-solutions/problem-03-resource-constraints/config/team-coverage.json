@@ -1,0 +1,22 @@
+{
+  "aws_infrastructure": {
+    "primary": "Avery",
+    "secondary": "Jordan"
+  },
+  "monitoring_observability": {
+    "primary": "Jordan",
+    "secondary": "Riley"
+  },
+  "ci_cd": {
+    "primary": "Casey",
+    "secondary": "Avery"
+  },
+  "iam_access": {
+    "primary": "Avery",
+    "secondary": "Casey"
+  },
+  "documentation_runbooks": {
+    "primary": "Riley",
+    "secondary": "Shared"
+  }
+}

@@ -1,0 +1,9 @@
+task_id,task,category,impact,urgency,owner,estimated_minutes
+T-001,Production API outage,incident,5,5,Avery,90
+T-002,Investigate high disk usage,monitoring,4,4,Jordan,45
+T-003,Create IAM access report,access,2,3,Casey,30
+T-004,Update deployment runbook,documentation,1,2,Riley,60
+T-005,Patch vulnerable server,security,5,4,Jordan,75
+T-006,Review unused EBS volumes,cost,3,2,Avery,40
+T-007,Deploy application release,deployment,3,4,Casey,60
+T-008,Update monitoring dashboard,observability,2,2,Riley,45
