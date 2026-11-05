@@ -91,19 +91,6 @@ These are example starting thresholds. In production, they should be tuned to th
 5. Add missing telemetry.
 6. Track MTTD and MTTR over time.
 
-## Files
-
-```text
-problem-02-proactive-monitoring/
-├── README.md
-├── config/
-│   └── alert-rules.json
-├── examples/
-│   └── sample-metrics.csv
-└── scripts/
-    └── evaluate_metrics.py
-```
-
 
 ## Evidence
 
