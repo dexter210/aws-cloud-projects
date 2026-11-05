@@ -91,26 +91,6 @@ Common adoption challenges include:
 
 The best approach is to start with one small service or project, demonstrate value, and expand from there.
 
-## Files
-
-```text
-problem-05-cicd-integration/
-├── README.md
-├── app/
-│   └── health_check.py
-├── config/
-│   └── deployment-config.json
-├── scripts/
-│   └── validate_pipeline.py
-└── screenshots/
-    ├── 01-local-ci-validation-pass.png
-    └── 02-github-actions-ci-pass.png
-
-Repository root:
-.github/
-└── workflows/
-    └── project-03-ci-validation.yml
-```
 
 ## Desired Outcomes
 
