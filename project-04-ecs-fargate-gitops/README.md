@@ -27,6 +27,8 @@ The environment was provisioned with Terraform, container images were stored in 
 
 ## Architecture
 
+![Sanitized AWS ECS Fargate GitOps architecture](architecture.svg)
+
 ```mermaid
 flowchart TB
     Dev[Developer] --> GH[GitHub Repository\ngitops branch]
