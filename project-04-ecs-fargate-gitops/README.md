@@ -186,6 +186,51 @@ The project was validated at multiple layers:
 - GitHub OIDC authentication succeeded
 - GitHub Actions completed an end-to-end ECS deployment successfully
 
+
+## Visual Evidence
+
+### Local Application Validation
+
+The frontend and backend were first validated locally before containerization and cloud deployment.
+
+![Local application success](screenshots/01-local-application-success.png)
+
+### Containerized Application Validation
+
+Both services were then built and validated as Docker containers.
+
+![Containerized application success](screenshots/02-containerized-application-success.png)
+
+### Application Load Balancer Routing
+
+The ALB used path-based routing so frontend traffic and API traffic were sent to separate ECS target groups.
+
+![ALB path routing](screenshots/03-alb-path-routing.png)
+
+### ECS Services Healthy
+
+After deployment and troubleshooting, both ECS Fargate services were running successfully.
+
+![ECS services healthy](screenshots/04-ecs-services-healthy.png)
+
+### Auto Scaling — Scale Out
+
+Under CPU load, the backend service scaled from its minimum capacity toward the configured maximum.
+
+![ECS autoscaling scale out](screenshots/05-autoscaling-scale-out.png)
+
+### Auto Scaling — Scale In
+
+After the load test ended, the service returned to its minimum task count.
+
+![ECS autoscaling scale in](screenshots/06-autoscaling-scale-in.png)
+
+### GitHub Actions Deployment
+
+The GitOps workflow successfully authenticated to AWS with OIDC, built and pushed container images, registered new ECS task definitions, deployed both services, and waited for service stability.
+
+![GitHub Actions ECS deployment success](screenshots/07-github-actions-deployment-success.png)
+
 ## Technologies
 
 **AWS:** ECS, Fargate, ECR, Application Load Balancer, VPC, IAM, CloudWatch, Application Auto Scaling  
