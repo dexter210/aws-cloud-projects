@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .title{font:700 32px Arial,sans-serif;fill:#0f172a}
+      .h2{font:700 24px Arial,sans-serif;fill:#0f172a}
+      .txt{font:18px Arial,sans-serif;fill:#0f172a}
+      .small{font:15px Arial,sans-serif;fill:#334155}
+      .box{fill:#fff;stroke:#2563eb;stroke-width:3;rx:18;ry:18}
+      .aws{fill:#fff7ed;stroke:#f97316;stroke-width:3;rx:18;ry:18}
+      .green{fill:#f0fdf4;stroke:#16a34a;stroke-width:3;rx:18;ry:18}
+      .purple{fill:#faf5ff;stroke:#9333ea;stroke-width:3;rx:18;ry:18}
+      .pink{fill:#fdf2f8;stroke:#db2777;stroke-width:3;rx:18;ry:18}
+      .line{stroke:#2563eb;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#9333ea;stroke-width:4;stroke-dasharray:10 8;fill:none;marker-end:url(#arrowPurple)}
+      .runtime{stroke:#16a34a;stroke-width:4;fill:none;marker-end:url(#arrowGreen)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#9333ea"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/></marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f8fafc"/>
+  <text x="800" y="52" text-anchor="middle" class="title">GitOps Deployment to Amazon ECS Fargate</text>
+  <text x="800" y="84" text-anchor="middle" class="small">React + Express • Docker • Terraform • GitHub Actions OIDC • ECS Fargate</text>
+
+  <!-- CI/CD -->
+  <rect x="50" y="115" width="1500" height="190" class="box"/>
+  <text x="80" y="150" class="h2">GitOps / CI-CD</text>
+  <rect x="90" y="180" width="190" height="80" class="box"/>
+  <text x="185" y="213" text-anchor="middle" class="txt">Developer</text>
+  <text x="185" y="240" text-anchor="middle" class="small">push to gitops branch</text>
+
+  <rect x="360" y="180" width="210" height="80" class="box"/>
+  <text x="465" y="213" text-anchor="middle" class="txt">GitHub</text>
+  <text x="465" y="240" text-anchor="middle" class="small">private challenge repo</text>
+
+  <rect x="650" y="180" width="230" height="80" class="box"/>
+  <text x="765" y="213" text-anchor="middle" class="txt">GitHub Actions</text>
+  <text x="765" y="240" text-anchor="middle" class="small">build + deploy workflow</text>
+
+  <rect x="960" y="180" width="210" height="80" class="purple"/>
+  <text x="1065" y="213" text-anchor="middle" class="txt">AWS IAM Role</text>
+  <text x="1065" y="240" text-anchor="middle" class="small">OIDC short-lived auth</text>
+
+  <rect x="1260" y="180" width="220" height="80" class="aws"/>
+  <text x="1370" y="213" text-anchor="middle" class="txt">Amazon ECR</text>
+  <text x="1370" y="240" text-anchor="middle" class="small">frontend + backend images</text>
+
+  <path d="M280 220 H360" class="line"/>
+  <path d="M570 220 H650" class="line"/>
+  <path d="M880 220 H960" class="line"/>
+  <path d="M1170 220 H1260" class="line"/>
+
+  <!-- Terraform -->
+  <rect x="50" y="340" width="300" height="560" class="purple"/>
+  <text x="200" y="382" text-anchor="middle" class="h2">Terraform</text>
+  <text x="85" y="425" class="txt">Provisions:</text>
+  <text x="90" y="462" class="small">• VPC 10.0.0.0/16</text>
+  <text x="90" y="492" class="small">• 2 public subnets</text>
+  <text x="90" y="522" class="small">• Internet Gateway</text>
+  <text x="90" y="552" class="small">• Public route table</text>
+  <text x="90" y="582" class="small">• Security groups</text>
+  <text x="90" y="612" class="small">• ECR repositories</text>
+  <text x="90" y="642" class="small">• Application Load Balancer</text>
+  <text x="90" y="672" class="small">• Target groups + listener</text>
+  <text x="90" y="702" class="small">• ECS cluster + services</text>
+  <text x="90" y="732" class="small">• Task definitions</text>
+  <text x="90" y="762" class="small">• CloudWatch log groups</text>
+  <text x="90" y="792" class="small">• ECS Service Auto Scaling</text>
+  <text x="90" y="822" class="small">• ECS task execution IAM role</text>
+
+  <!-- AWS runtime -->
+  <rect x="390" y="340" width="1160" height="560" class="green"/>
+  <text x="430" y="382" class="h2">AWS Region — us-east-1</text>
+
+  <rect x="430" y="410" width="1080" height="445" class="green"/>
+  <text x="465" y="448" class="h2">VPC 10.0.0.0/16</text>
+
+  <rect x="465" y="485" width="250" height="300" class="box"/>
+  <text x="590" y="525" text-anchor="middle" class="txt">Internet Gateway</text>
+  <text x="590" y="556" text-anchor="middle" class="small">public internet access</text>
+
+  <rect x="475" y="620" width="230" height="110" class="box"/>
+  <text x="590" y="658" text-anchor="middle" class="txt">Application</text>
+  <text x="590" y="686" text-anchor="middle" class="txt">Load Balancer</text>
+  <text x="590" y="715" text-anchor="middle" class="small">HTTP :80</text>
+
+  <rect x="770" y="485" width="310" height="145" class="aws"/>
+  <text x="925" y="525" text-anchor="middle" class="txt">Public Subnet A</text>
+  <text x="925" y="555" text-anchor="middle" class="small">10.0.1.0/24</text>
+  <text x="925" y="590" text-anchor="middle" class="txt">Frontend ECS Service</text>
+  <text x="925" y="615" text-anchor="middle" class="small">Fargate • Port 80</text>
+
+  <rect x="770" y="655" width="310" height="145" class="aws"/>
+  <text x="925" y="695" text-anchor="middle" class="txt">Public Subnet B</text>
+  <text x="925" y="725" text-anchor="middle" class="small">10.0.2.0/24</text>
+  <text x="925" y="760" text-anchor="middle" class="txt">Backend ECS Service</text>
+  <text x="925" y="785" text-anchor="middle" class="small">Fargate • Port 8080</text>
+
+  <rect x="1135" y="485" width="320" height="145" class="pink"/>
+  <text x="1295" y="525" text-anchor="middle" class="txt">Amazon CloudWatch</text>
+  <text x="1295" y="558" text-anchor="middle" class="small">container logs</text>
+  <text x="1295" y="585" text-anchor="middle" class="small">CPU / memory metrics</text>
+  <text x="1295" y="612" text-anchor="middle" class="small">deployment troubleshooting</text>
+
+  <rect x="1135" y="655" width="320" height="145" class="aws"/>
+  <text x="1295" y="695" text-anchor="middle" class="txt">ECS Service Auto Scaling</text>
+  <text x="1295" y="728" text-anchor="middle" class="small">Min 1 • Max 4</text>
+  <text x="1295" y="755" text-anchor="middle" class="small">Target CPU 50%</text>
+  <text x="1295" y="782" text-anchor="middle" class="small">Scale out / scale in</text>
+
+  <!-- runtime arrows -->
+  <text x="590" y="475" text-anchor="middle" class="small">Internet users</text>
+  <path d="M590 565 V620" class="runtime"/>
+  <path d="M705 665 H770" class="runtime"/>
+  <text x="730" y="648" class="small">/</text>
+  <path d="M705 700 H740 V735 H770" class="runtime"/>
+  <text x="715" y="724" class="small">/api/*</text>
+  <path d="M1080 560 H1135" class="runtime"/>
+  <path d="M1080 730 H1135" class="runtime"/>
+
+  <!-- deploy -->
+  <path d="M1370 260 V320 H1040 V485" class="line"/>
+  <text x="1200" y="318" class="small">pull images for task definitions</text>
+  <path d="M350 610 H390" class="dash"/>
+  <text x="190" y="930" class="small">Public portfolio diagram intentionally omits account IDs, live endpoints, and reviewer details.</text>
+</svg>
