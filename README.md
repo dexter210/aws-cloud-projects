@@ -6,7 +6,7 @@ Hands-on infrastructure, automation, observability, IAM, and security projects b
 
 | Project | Focus | Highlights |
 | --- | --- | --- |
-| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, Linux, IAM, CloudWatch, EKS, Helm, Kubernetes autoscaling, Python automation, observability, GitHub Actions |
+| [AWS Cloud Engineering Projects](https://github.com/dexter210/aws-cloud-projects) | Cloud Engineering | EC2, ECS Fargate, ECR, ALB, Terraform, IAM, CloudWatch, EKS, Kubernetes autoscaling, Python automation, GitHub Actions, OIDC |
 | [Microsoft Sentinel SOC Lab](https://github.com/dexter210/MS-soc-lab) | Cloud Security / Detection Engineering | Azure VM, AMA/DCR, KQL, Microsoft Sentinel, MITRE ATT&CK, incident investigation |
 | [Active Directory Automation](https://github.com/dexter210/Active-Directory-) | Systems / IAM | PowerShell, AD DS, bulk user provisioning, OU management, safer credential handling |
 | [Phishing Awareness Simulation](https://github.com/dexter210/Phishing-Campaign) | Security Awareness | GoPhish, controlled simulation workflow, defensive security considerations |
@@ -60,6 +60,25 @@ Built a practical cloud-operations strategy project covering five common enginee
 - local CI validation plus successful GitHub Actions execution
 - practical mappings to AWS Glue, S3, CloudWatch, and production observability workflows
 
+
+### [04 — GitOps Deployment to Amazon ECS Fargate](project-04-ecs-fargate-gitops/README.md)
+
+Built and validated a containerized React + Express application platform on Amazon ECS Fargate using Terraform and GitHub Actions GitOps.
+
+**Status:** completed.
+
+**Demonstrated:**
+- Dockerized React frontend and Express backend
+- Amazon ECR image repositories
+- ECS Fargate task definitions and services
+- Application Load Balancer path routing for `/` and `/api/*`
+- CloudWatch logging and deployment troubleshooting
+- CPU-based ECS Service Auto Scaling from **1 → 4 → 1 tasks**
+- Terraform Infrastructure as Code
+- GitHub Actions CI/CD with commit-SHA image tagging
+- GitHub OIDC authentication using short-lived AWS credentials
+- end-to-end deployment validation with healthy ALB targets and HTTP 200 responses
+
 ## Core technical areas
 
 ### Cloud
@@ -79,7 +98,7 @@ Built a practical cloud-operations strategy project covering five common enginee
 - Python automation
 - GitHub Actions
 - PowerShell
-- Terraform fundamentals
+- Terraform
 - Git / GitHub
 
 ### Systems & networking
@@ -125,9 +144,9 @@ Built a practical cloud-operations strategy project covering five common enginee
 - [x] Complete Amazon EKS worker-node deployment
 - [x] Deploy application through Helm
 - [x] Validate Kubernetes Metrics Server and HPA
-- [ ] Add Infrastructure as Code project
+- [x] Add Infrastructure as Code project
 - [x] Complete cloud engineering strategy / CI validation project
-- [ ] Add dedicated container security pipeline project
+- [x] Add containerized GitOps / ECS Fargate deployment project
 - [ ] Add disaster-recovery architecture and recovery validation
 
 ## Security note
