@@ -27,7 +27,7 @@ The environment was provisioned with Terraform, container images were stored in 
 
 ## Architecture
 
-![Sanitized AWS ECS Fargate GitOps architecture](architecture.svg)
+![AWS ECS Fargate GitOps Architecture](screenshots/My%20AWS%20Building.png)
 
 ```mermaid
 flowchart TB
