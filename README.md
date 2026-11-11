@@ -81,8 +81,6 @@ Built and validated a containerized React + Express application platform on Amaz
 
 ### [05 — AWS Three-Tier Java Application](project-05-aws-three-tier-java/README.md)
 
-**Status:** planned / setup in progress. A Java application and three-tier AWS architecture lab based on a project by [NotHarshhaa](https://github.com/NotHarshhaa/DevOps-Projects/tree/master/DevOps-Project-01). Deployment and validation are still to be completed.
-
 ## Core technical areas
 
 ### Cloud
