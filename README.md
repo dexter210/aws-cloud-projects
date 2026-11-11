@@ -81,6 +81,17 @@ Built and validated a containerized React + Express application platform on Amaz
 
 ### [05 — AWS Three-Tier Java Application](project-05-aws-three-tier-java/README.md)
 
+Preparing a three-tier Java application deployment on AWS, covering the web, application, and database layers.
+
+**Status:** setup in progress.
+
+**Planned focus:**
+- AWS networking and security
+- Java application build and deployment
+- Web, application, and database tiers
+- Connectivity testing and troubleshooting
+- Resource cleanup and cost review
+
 ## Core technical areas
 
 ### Cloud
