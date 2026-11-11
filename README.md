@@ -79,6 +79,10 @@ Built and validated a containerized React + Express application platform on Amaz
 - GitHub OIDC authentication using short-lived AWS credentials
 - end-to-end deployment validation with healthy ALB targets and HTTP 200 responses
 
+### [05 — AWS Three-Tier Java Application](project-05-aws-three-tier-java/README.md)
+
+**Status:** planned / setup in progress. A Java application and three-tier AWS architecture lab based on a project by [NotHarshhaa](https://github.com/NotHarshhaa/DevOps-Projects/tree/master/DevOps-Project-01). Deployment and validation are still to be completed.
+
 ## Core technical areas
 
 ### Cloud
@@ -147,6 +151,7 @@ Built and validated a containerized React + Express application platform on Amaz
 - [x] Add Infrastructure as Code project
 - [x] Complete cloud engineering strategy / CI validation project
 - [x] Add containerized GitOps / ECS Fargate deployment project
+- [ ] Complete AWS three-tier Java application deployment
 - [ ] Add disaster-recovery architecture and recovery validation
 
 ## Security note
