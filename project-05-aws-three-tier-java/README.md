@@ -16,4 +16,4 @@ Study and deploy a three-tier Java application on AWS, then document the archite
 - [ ] Validate connectivity and application behavior.
 - [ ] Document screenshots, troubleshooting, and cleanup.
 
-No deployment or completed outcomes are claimed yet. The application source remains in the original linked project and the local copy; it has not been added to this portfolio folder.
+No deployment or completed outcomes are claimed yet. The [application source](Java-Login-App/) and [reference guide](REFERENCE_GUIDE.md) are included. Database and artifact repository credentials use environment-variable placeholders.
