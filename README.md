@@ -79,7 +79,7 @@ Built and validated a containerized React + Express application platform on Amaz
 - GitHub OIDC authentication using short-lived AWS credentials
 - end-to-end deployment validation with healthy ALB targets and HTTP 200 responses
 
-### [05 — AWS Three-Tier Java Application](project-05-aws-three-tier-java/README.md)
+### [05 — AWS Three-Tier Java Application](https://github.com/dexter210/aws-3-tier-java-app)
 
 Preparing a three-tier Java application deployment on AWS, covering the web, application, and database layers.
 
