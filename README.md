@@ -7,6 +7,7 @@ Hands-on infrastructure, automation, observability, IAM, and security projects b
 | Project | Focus | Highlights |
 | --- | --- | --- |
 | [DevOps ECS Tech Challenge](https://github.com/dexter210/devops-ecs-tech-challenge) | Cloud Engineering / DevOps | ECS Fargate, Docker, Terraform, GitHub Actions, OIDC, ALB, autoscaling |
+| [AWS EKS CI/CD & GitOps Tech Challenge](https://github.com/dexter210/tech-challenge-2) | Cloud Engineering / DevOps | EKS, Terraform, Helm, Jenkins, GitHub Actions, Argo CD, HPA, Cluster Autoscaler |
 | [Microsoft Sentinel SOC Lab](https://github.com/dexter210/MS-soc-lab) | Cloud Security / Detection Engineering | Azure VM, AMA/DCR, KQL, Microsoft Sentinel, MITRE ATT&CK, incident investigation |
 | [Active Directory Automation](https://github.com/dexter210/Active-Directory-) | Systems / IAM | PowerShell, AD DS, bulk user provisioning, OU management, safer credential handling |
 | [Phishing Awareness Simulation](https://github.com/dexter210/Phishing-Campaign) | Security Awareness | GoPhish, controlled simulation workflow, defensive security considerations |
@@ -78,6 +79,20 @@ I deployed a containerized React frontend and Express backend on Amazon ECS Farg
 - Connectivity testing and troubleshooting
 - Resource cleanup and cost review
 
+### [06 — Amazon EKS CI/CD & GitOps Tech Challenge](https://github.com/dexter210/tech-challenge-2)
+
+Built and validated a containerized **Python/Flask application on Amazon EKS**, provisioning AWS infrastructure with Terraform and deploying Kubernetes resources with Helm. Implemented two separate delivery workflows: **Jenkins → Amazon ECR → EKS** and **GitHub Actions (OIDC) → ECR → Argo CD GitOps synchronization**.
+
+**Demonstrated:**
+- Terraform-provisioned VPC, IAM roles, Amazon ECR, Amazon EKS, and managed worker nodes
+- Docker containerization and Helm deployments exposed through an Application Load Balancer
+- Jenkins CI/CD automation to build, push, and deploy versioned container images
+- GitHub Actions and Argo CD synchronization on the separate [`gitops` branch](https://github.com/dexter210/tech-challenge-2/tree/gitops)
+- Kubernetes Horizontal Pod Autoscaler testing with memory-based scale-out from **1 → 3 replicas** and scale-down to **1**
+- Cluster Autoscaler validation and documented rollout evidence
+
+[View the code, deployment architecture, walkthrough, and screenshots →](https://github.com/dexter210/tech-challenge-2)
+
 ## Core technical areas
 
 ### Cloud
@@ -146,6 +161,7 @@ I deployed a containerized React frontend and Express backend on Amazon ECS Farg
 - [x] Add Infrastructure as Code project
 - [x] Complete cloud engineering strategy / CI validation project
 - [x] Add containerized GitOps / ECS Fargate deployment project
+- [x] Link Amazon EKS CI/CD and GitOps Tech Challenge 2
 - [ ] Complete AWS three-tier Java application deployment
 - [ ] Add disaster-recovery architecture and recovery validation
 
