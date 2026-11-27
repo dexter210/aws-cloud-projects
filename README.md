@@ -8,6 +8,7 @@ Hands-on infrastructure, automation, observability, IAM, and security projects b
 | --- | --- | --- |
 | [DevOps ECS Tech Challenge](https://github.com/dexter210/devops-ecs-tech-challenge) | Cloud Engineering / DevOps | ECS Fargate, Docker, Terraform, GitHub Actions, OIDC, ALB, autoscaling |
 | [AWS EKS CI/CD & GitOps Tech Challenge](https://github.com/dexter210/tech-challenge-2) | Cloud Engineering / DevOps | EKS, Terraform, Helm, Jenkins, GitHub Actions, Argo CD, HPA, Cluster Autoscaler |
+| [AWS Terraform & Ansible Infrastructure](https://github.com/dexter210/tech-challenge-3) | Cloud Engineering / Automation | EC2, S3, VPC, IAM, Terraform, Ansible, Nginx |
 | [Microsoft Sentinel SOC Lab](https://github.com/dexter210/MS-soc-lab) | Cloud Security / Detection Engineering | Azure VM, AMA/DCR, KQL, Microsoft Sentinel, MITRE ATT&CK, incident investigation |
 | [Active Directory Automation](https://github.com/dexter210/Active-Directory-) | Systems / IAM | PowerShell, AD DS, bulk user provisioning, OU management, safer credential handling |
 | [Phishing Awareness Simulation](https://github.com/dexter210/Phishing-Campaign) | Security Awareness | GoPhish, controlled simulation workflow, defensive security considerations |
@@ -93,6 +94,20 @@ Built and validated a containerized **Python/Flask application on Amazon EKS**, 
 
 [View the code, deployment architecture, walkthrough, and screenshots →](https://github.com/dexter210/tech-challenge-2)
 
+### [07 — AWS Infrastructure with Terraform and Ansible](https://github.com/dexter210/tech-challenge-3)
+
+Provisioned an Amazon EC2 web server and supporting AWS infrastructure with Terraform, then used Ansible to install Nginx and deploy a Hello World page.
+
+**Demonstrated:**
+- Terraform-managed VPC, public subnet, internet gateway, route table, and security group
+- Amazon EC2 and a private, encrypted Amazon S3 bucket
+- An EC2 IAM role with project bucket read access and IMDSv2 enforcement
+- Ansible configuration of Nginx and a repeat run with no changes
+- Verification of the webpage, IAM role, and S3 access
+- Terraform teardown of the lab infrastructure after validation
+
+[View the code, architecture, deployment steps, and screenshots →](https://github.com/dexter210/tech-challenge-3)
+
 ## Core technical areas
 
 ### Cloud
@@ -108,6 +123,7 @@ Built and validated a containerized **Python/Flask application on Amazon EKS**, 
 - Kubernetes
 - `kubectl`
 - `eksctl`
+- Ansible
 - Helm
 - Python automation
 - GitHub Actions
@@ -162,6 +178,7 @@ Built and validated a containerized **Python/Flask application on Amazon EKS**, 
 - [x] Complete cloud engineering strategy / CI validation project
 - [x] Add containerized GitOps / ECS Fargate deployment project
 - [x] Link Amazon EKS CI/CD and GitOps Tech Challenge 2
+- [x] Link AWS Terraform and Ansible Tech Challenge 3
 - [ ] Complete AWS three-tier Java application deployment
 - [ ] Add disaster-recovery architecture and recovery validation
 
